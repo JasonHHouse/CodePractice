@@ -1,28 +1,25 @@
 package com.jason.sort.test;
 
-import com.jason.sort.JInsertionSort;
-import com.jason.sort.JSelectionSort;
+import com.jason.sort.*;
 
 public class Test {
 
 	public static void main(String[] args) {
 		System.out.println("Selection Sort");
-		int[] selectionArray = {5,1,2,3,4,5,6,1,-1,2,-1,5,1,2,3,4,5,6,1};
-		print(selectionArray);
+		int[] selectionArray = {4,5,2,3,1};
 		JSelectionSort.sort(selectionArray);
-		print(selectionArray);
 		
 		System.out.println("Insertion Sort");
-		int[] insertionArray = {5,1,2,3,4,5,6,1,-1,2,-1,5,1,2,3,4,5,6,1};
-		print(insertionArray);
+		int[] insertionArray = {4,5,2,3,1};
 		JInsertionSort.sort(insertionArray);
-		print(insertionArray);
+		
+		System.out.println("Bubble Sort");
+		int[] bubbleArray = {4,5,2,3,1};
+		JBubbleSort.sort(bubbleArray);
+		
+		System.out.println("Bucket Sort");
+		int[] bucketSort = {4,5,2,3,1};
+		JBucketSort.sort(bucketSort);
 	}
 	
-	private static void print(int[] array) {
-		for(int i : array){
-			System.out.print(i + ", ");
-		}
-		System.out.println();
-	}
 }

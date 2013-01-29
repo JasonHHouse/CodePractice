@@ -1,17 +1,16 @@
 package com.jason.sort;
 
-public class JSelectionSort {
+public class JBubbleSort {
 
-	public static void sort(int[] array) {
+	public static void sort(int array[]) {
 		print(array);
 		for (int i = 0; i < array.length; i++) {
-			int minValueLoc = i;
-			for (int j = i + 1; j < array.length; j++) {
-				if (array[minValueLoc] > array[j])
-					minValueLoc = j;
+			for (int j = 1; j < (array.length - i); j++) {
+				if (array[j - 1] > array[j]) {
+					swap(array, j - 1, j);
+					print(array);
+				}
 			}
-			swap(array, minValueLoc, i);
-			print(array);
 		}
 		print(array);
 	}
@@ -21,7 +20,7 @@ public class JSelectionSort {
 		array[a] = array[b];
 		array[b] = temp;
 	}
-
+	
 	private static void print(int[] array) {
 		for(int i : array){
 			System.out.print(i + ", ");
